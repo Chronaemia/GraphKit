@@ -14,7 +14,6 @@
 		87F891DF23DD317D00358AD9 /* GraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F891DE23DD317D00358AD9 /* GraphStyle.swift */; };
 		87F891E223DD375D00358AD9 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F891E123DD375D00358AD9 /* Stroke.swift */; };
 		87F891EB23DD486500358AD9 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F891EA23DD486500358AD9 /* Line.swift */; };
-		87F891EE23DD5A9100358AD9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F891ED23DD5A9100358AD9 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +37,6 @@
 		87F891DE23DD317D00358AD9 /* GraphStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphStyle.swift; sourceTree = "<group>"; };
 		87F891E123DD375D00358AD9 /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
 		87F891EA23DD486500358AD9 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		87F891ED23DD5A9100358AD9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +83,6 @@
 				87F891E823DD484A00358AD9 /* Components */,
 				87F891E023DD374F00358AD9 /* Extensions */,
 				87F891C523DD18FC00358AD9 /* GraphKit.h */,
-				87F891ED23DD5A9100358AD9 /* TestView.swift */,
 				87F891C623DD18FC00358AD9 /* Info.plist */,
 			);
 			path = GraphKit;
@@ -244,7 +241,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				87F891DF23DD317D00358AD9 /* GraphStyle.swift in Sources */,
-				87F891EE23DD5A9100358AD9 /* TestView.swift in Sources */,
 				87F891E223DD375D00358AD9 /* Stroke.swift in Sources */,
 				87F891DD23DD198E00358AD9 /* LineGraph.swift in Sources */,
 				87F891EB23DD486500358AD9 /* Line.swift in Sources */,

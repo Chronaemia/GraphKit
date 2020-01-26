@@ -10,12 +10,19 @@ import SwiftUI
 
 struct LineGraph<T>: View where T : ShapeStyle {
     var points : [Double]
+    var labels : (String, String)
     var style : GraphStyle<T>
      
     
-    init(_ points : [Double], style : GraphStyle<T>) {
+    init(_ points : [Double], labels: (String, String)? = nil, style : GraphStyle<T>) {
         self.points = points
         self.style = style
+        
+        if let labelValue = labels {
+            self.labels = labelValue
+        } else {
+            self.labels = (String(format: "%.1f", points.max()!), String(format: "%.1f", points.min()!))
+        }
         
     }
 
@@ -23,9 +30,9 @@ struct LineGraph<T>: View where T : ShapeStyle {
     var body: some View {
         HStack {
             VStack{
-                Text(String(format: "%.1f", points.max()!))
+                Text(self.labels.0)
                 Spacer()
-                Text(String(format: "%.1f", points.min()!))
+                Text(self.labels.1)
             }
             Divider()
             GeometryReader { geometry in
@@ -41,9 +48,15 @@ struct LineGraph<T>: View where T : ShapeStyle {
 }
 
 extension LineGraph where T == Color {
-    init(_ points : [Double]) {
+    init(_ points : [Double], label: (String, String)? = nil) {
         self.points = points
         self.style = GraphStyle(value: Color.red)
+        
+        if let labelValue = label {
+            self.labels = labelValue
+        } else {
+            self.labels = ("\(points.max()!)", "\(points.min()!)")
+        }
     }
 }
 
