@@ -10,6 +10,11 @@
 		87F891CC23DD18FC00358AD9 /* GraphKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F891C223DD18FC00358AD9 /* GraphKit.framework */; };
 		87F891D123DD18FC00358AD9 /* GraphKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F891D023DD18FC00358AD9 /* GraphKitTests.swift */; };
 		87F891D323DD18FC00358AD9 /* GraphKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 87F891C523DD18FC00358AD9 /* GraphKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87F891DD23DD198E00358AD9 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F891DC23DD198E00358AD9 /* LineGraph.swift */; };
+		87F891DF23DD317D00358AD9 /* GraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F891DE23DD317D00358AD9 /* GraphStyle.swift */; };
+		87F891E223DD375D00358AD9 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F891E123DD375D00358AD9 /* Stroke.swift */; };
+		87F891EB23DD486500358AD9 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F891EA23DD486500358AD9 /* Line.swift */; };
+		87F891EE23DD5A9100358AD9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F891ED23DD5A9100358AD9 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,11 @@
 		87F891CB23DD18FC00358AD9 /* GraphKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F891D023DD18FC00358AD9 /* GraphKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphKitTests.swift; sourceTree = "<group>"; };
 		87F891D223DD18FC00358AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87F891DC23DD198E00358AD9 /* LineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
+		87F891DE23DD317D00358AD9 /* GraphStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphStyle.swift; sourceTree = "<group>"; };
+		87F891E123DD375D00358AD9 /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
+		87F891EA23DD486500358AD9 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		87F891ED23DD5A9100358AD9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +81,11 @@
 		87F891C423DD18FC00358AD9 /* GraphKit */ = {
 			isa = PBXGroup;
 			children = (
+				87F891EC23DD4A1A00358AD9 /* Models */,
+				87F891E823DD484A00358AD9 /* Components */,
+				87F891E023DD374F00358AD9 /* Extensions */,
 				87F891C523DD18FC00358AD9 /* GraphKit.h */,
+				87F891ED23DD5A9100358AD9 /* TestView.swift */,
 				87F891C623DD18FC00358AD9 /* Info.plist */,
 			);
 			path = GraphKit;
@@ -84,6 +98,39 @@
 				87F891D223DD18FC00358AD9 /* Info.plist */,
 			);
 			path = GraphKitTests;
+			sourceTree = "<group>";
+		};
+		87F891E023DD374F00358AD9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				87F891E123DD375D00358AD9 /* Stroke.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		87F891E823DD484A00358AD9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				87F891E923DD485600358AD9 /* Line Graph */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		87F891E923DD485600358AD9 /* Line Graph */ = {
+			isa = PBXGroup;
+			children = (
+				87F891DC23DD198E00358AD9 /* LineGraph.swift */,
+				87F891EA23DD486500358AD9 /* Line.swift */,
+			);
+			path = "Line Graph";
+			sourceTree = "<group>";
+		};
+		87F891EC23DD4A1A00358AD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				87F891DE23DD317D00358AD9 /* GraphStyle.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +195,7 @@
 				TargetAttributes = {
 					87F891C123DD18FC00358AD9 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					87F891CA23DD18FC00358AD9 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -195,6 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F891DF23DD317D00358AD9 /* GraphStyle.swift in Sources */,
+				87F891EE23DD5A9100358AD9 /* TestView.swift in Sources */,
+				87F891E223DD375D00358AD9 /* Stroke.swift in Sources */,
+				87F891DD23DD198E00358AD9 /* LineGraph.swift in Sources */,
+				87F891EB23DD486500358AD9 /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +393,7 @@
 		87F891D723DD18FC00358AD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = C43MSUWJQ4;
@@ -357,6 +411,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +420,7 @@
 		87F891D823DD18FC00358AD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = C43MSUWJQ4;
@@ -390,6 +446,7 @@
 		87F891DA23DD18FC00358AD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C43MSUWJQ4;
 				INFOPLIST_FILE = GraphKitTests/Info.plist;
@@ -408,6 +465,7 @@
 		87F891DB23DD18FC00358AD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C43MSUWJQ4;
 				INFOPLIST_FILE = GraphKitTests/Info.plist;
