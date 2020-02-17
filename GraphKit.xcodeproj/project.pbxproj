@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8790089B23FA9CBC001462D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		87F891C223DD18FC00358AD9 /* GraphKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GraphKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F891C523DD18FC00358AD9 /* GraphKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphKit.h; sourceTree = "<group>"; };
 		87F891C623DD18FC00358AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		87F891B823DD18FC00358AD9 = {
 			isa = PBXGroup;
 			children = (
+				8790089B23FA9CBC001462D0 /* README.md */,
 				87F891C423DD18FC00358AD9 /* GraphKit */,
 				87F891CF23DD18FC00358AD9 /* GraphKitTests */,
 				87F891C323DD18FC00358AD9 /* Products */,

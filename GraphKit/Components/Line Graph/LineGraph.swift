@@ -8,33 +8,37 @@
 
 import SwiftUI
 
-struct LineGraph<T>: View where T : ShapeStyle {
-    var points : [Double]
-    var labels : (String, String)
-    var style : GraphStyle<T>
+public struct LineGraph<T : ShapeStyle, U: ShapeStyle>: View {
+    var points : [Double] // @TODO - Switch this for a protocol that includes all of the primitive number types
+    var axisLabels : (String, String)
+    var style : GraphStyle<T, U>
      
     
-    init(_ points : [Double], labels: (String, String)? = nil, style : GraphStyle<T>) {
+    public init(_ points : [Double], axisLabels: (String, String)? = nil, style : GraphStyle<T, U>) {
         self.points = points
+        
         self.style = style
         
-        if let labelValue = labels {
-            self.labels = labelValue
+        if let labelValue = axisLabels {
+            self.axisLabels = labelValue
         } else {
-            self.labels = (String(format: "%.1f", points.max()!), String(format: "%.1f", points.min()!))
+            self.axisLabels = ("", "")
         }
         
     }
 
     
-    var body: some View {
+    public var body: some View {
         HStack {
-            VStack{
-                Text(self.labels.0)
-                Spacer()
-                Text(self.labels.1)
+            if self.axisLabels.0 != "" || self.axisLabels.1 != "" {
+                VStack{
+                    Text(self.axisLabels.1)
+                    Spacer()
+                    Text(self.axisLabels.0)
+                }
+                Divider()
             }
-            Divider()
+            
             GeometryReader { geometry in
                 Line(points: self.points, geometry: geometry, style: self.style)
             }
@@ -47,22 +51,27 @@ struct LineGraph<T>: View where T : ShapeStyle {
     }
 }
 
-extension LineGraph where T == Color {
-    init(_ points : [Double], label: (String, String)? = nil) {
-        self.points = points
-        self.style = GraphStyle(value: Color.red)
-        
-        if let labelValue = label {
-            self.labels = labelValue
-        } else {
-            self.labels = ("\(points.max()!)", "\(points.min()!)")
-        }
+// Provide an easy default style
+public extension LineGraph where T == Color, U == Color {
+    init(_ points : [Double], axisLabels: (String, String)? = nil) {
+        self.init(points, axisLabels: axisLabels, style: GraphStyle(stroke: Color.red, fill: Color.clear))
     }
 }
 
 struct LineGraph_Previews: PreviewProvider {
-    @State static var points = [10.0, 0.0, 6.0, 7.5, 9.0, 0]
+    @State static var points = [10.0, 1.0, 6.0, 9.5, 5.0, 10.0]
     static var previews: some View {
-        LineGraph(points)
+        
+        ZStack {
+            //Color.black
+            
+            LineGraph(points, axisLabels: ("", "max"), style: GraphStyle(
+                stroke: Color.blue,
+                fill: LinearGradient(gradient: Gradient(colors: [.blue, .green]), startPoint: .bottom, endPoint: .top),
+                lineWidth: 1,
+                curve: .continuous
+            ))
+            .frame(height: 200)
+        }
     }
 }
