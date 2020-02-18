@@ -12,7 +12,7 @@ import UIKit
 struct Line<T : ShapeStyle, U : ShapeStyle>: View {
     @State var points : [Double]
     @State var geometry : GeometryProxy?
-    var style : GraphStyle<T, U>
+    var style : LineStyle<T, U>
     
     var path : CGMutablePath {
         let path = CGMutablePath()
@@ -54,11 +54,11 @@ struct Line<T : ShapeStyle, U : ShapeStyle>: View {
         
         ZStack {
             Path(self.closedPath)
-                .fill(self.style.fillStyle)
+                .fill(self.style.fillColor)
             
             Path(self.path)
-                .stroke(self.style.strokeStyle, style: .init(
-                    lineWidth: self.style.lineWidth,
+                .stroke(self.style.strokeColor, style: .init(
+                    lineWidth: self.style.strokeWidth,
                     lineCap: self.style.lineCap,
                     lineJoin: self.style.lineJoin,
                     miterLimit: self.style.miterLimit
@@ -78,7 +78,7 @@ struct Line<T : ShapeStyle, U : ShapeStyle>: View {
     }
     
     private func getHeightValue(height: CGFloat, point: Double) -> CGFloat {
-        return CGFloat(height - (height * CGFloat(point / self.points.max()!)) - (self.style.lineWidth))
+        return CGFloat(height - (height * CGFloat(point / self.points.max()!)) - (self.style.strokeWidth))
     }
 }
 
@@ -86,6 +86,6 @@ struct Line<T : ShapeStyle, U : ShapeStyle>: View {
 
 struct Line_Previews: PreviewProvider {
     static var previews: some View {
-        Line(points: [10, 9, 0, 6], style: GraphStyle(stroke: Color.red, fill: Color.clear))
+        Line(points: [10, 9, 0, 6], style: LineStyle(stroke: Color.red, fill: Color.clear))
     }
 }
