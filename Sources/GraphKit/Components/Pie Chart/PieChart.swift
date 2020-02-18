@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct PieChart : View {
+public struct PieChart : View {
     var segments : [Double]
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             Arc(segments: self.segments, geometry: geometry)
         }

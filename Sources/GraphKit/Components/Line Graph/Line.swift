@@ -6,10 +6,11 @@
 //  Copyright © 2020 Reginald McBride-Taylor. All rights reserved.
 //
 
+
 import SwiftUI
 import UIKit
 
-struct Line<T : ShapeStyle, U : ShapeStyle>: View {
+public struct Line<T : ShapeStyle, U : ShapeStyle>: View {
     @State var points : [Double]
     @State var geometry : GeometryProxy?
     var style : LineStyle<T, U>
@@ -50,7 +51,7 @@ struct Line<T : ShapeStyle, U : ShapeStyle>: View {
         return path
     }
     
-    var body: some View {
+    public var body: some View {
         
         ZStack {
             Path(self.closedPath)
