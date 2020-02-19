@@ -8,7 +8,9 @@
 
 The eventual goal here is to slowly over time offer similar functionality to D3.js but in a Swift package that can be installed easily via the Swift Package Manager
 
-**If you'd like to follow the development of this project, we have a public feature board [here](https://trello.com/b/1b60nVkE)**
+**If you'd like to follow the development of this project, we have a public feature board [here](https://trello.com/b/1b60nVkE).**
+
+Until version 0.1.0, all development on this repository will be on the dev branch. This is to discourage anyone from using this library in production before it's completed.
 
 ### Graph Types
 
