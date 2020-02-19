@@ -8,9 +8,10 @@
 
 import SwiftUI
 
-struct Arc: View {
+struct Arc<T : ShapeStyle, U: ShapeStyle>: View {
     @State var segments : [Double]
     @State var geometry : GeometryProxy?
+    @State var style : PieChartStyle<T, U>
     
     public var center : CGPoint {
         CGPoint(x: geometry!.size.width / 2, y: geometry!.size.height / 2)
@@ -25,19 +26,18 @@ struct Arc: View {
     }
     
     var body: some View {
-        ZStack {
-            Circle()
-                .fill(Color.green)
-            ForEach(0..<self.segments.count, id: \.self){ index in
-                
-                
-                ArcSegment(angle: CGFloat(self.segments[index] / self.total), center: self.center, radius: self.minDim)
-                    .rotationEffect(self.calculateAngle(index), anchor: .center)
-                 
-            }
+        ForEach(0..<self.segments.count, id: \.self){ index in
             
+            ArcSegment(
+                angle: CGFloat(self.segments[index] / self.total),
+                center: self.center,
+                radius: self.minDim,
+                style: self.style
+            )
+                .rotationEffect(self.calculateAngle(index), anchor: .center)
              
         }
+        
     }
     
     // @TODO - Rethink this, it's really computational for no reason when it might be possible to just store this as a variable and add to it (except for SwiftUIs immutability
@@ -48,7 +48,9 @@ struct Arc: View {
 }
 
 struct Arc_Previews: PreviewProvider {
+    @State static var style = PieChartStyle<Color, Color>()
+    
     static var previews: some View {
-        Arc(segments: [1, 2, 3])
+        Arc(segments: [1, 2, 3], style: style)
     }
 }

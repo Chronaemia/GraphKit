@@ -8,15 +8,16 @@
 
 import SwiftUI
 
-struct ArcSegment: View {
+struct ArcSegment<T : ShapeStyle, U : ShapeStyle>: View {
     @State var angle : CGFloat // The total angle taken up by the slice
     @State var center : CGPoint
     @State var radius : CGFloat
+    @State var style : PieChartStyle<T, U>
     
     var body: some View {
         Path(self.arc)
             .stroke(Color.white, style: .init(
-                lineWidth: 4,
+                lineWidth: self.style.strokeWidth,
                 lineCap: .round,
                 lineJoin: .round,
                 miterLimit: .pi
@@ -44,7 +45,14 @@ struct ArcSegment: View {
 }
 
 struct ArcSegment_Previews: PreviewProvider {
+    @State static var style = PieChartStyle<Color, Color>()
+    
     static var previews: some View {
-        ArcSegment(angle: 0.3, center: CGPoint(x: 1, y: 1), radius: 1)
+        ArcSegment(
+            angle: 0.3,
+            center: CGPoint(x: 1, y: 1),
+            radius: 1,
+            style: style
+        )
     }
 }

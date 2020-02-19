@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-public struct LineStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
+public struct LineGraphStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     
     typealias StrokeStyle = T
     typealias FillStyle = U

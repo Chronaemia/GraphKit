@@ -15,7 +15,7 @@ struct PieChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     typealias FillStyle = U
     
     public var strokeColor : T = Color.clear as! T
-    public var fillColor : U = Color.clear as! U
+    public var fillColor : U = Color.red as! U
     public var strokeWidth : CGFloat = 5.0
     
     var appearance: Appearance = .light

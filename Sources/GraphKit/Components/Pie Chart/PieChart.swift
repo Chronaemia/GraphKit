@@ -8,20 +8,28 @@
 
 import SwiftUI
 
-public struct PieChart : View {
-    var segments : [Double]
+public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View {
+    @State var segments : [Double]
+    @State var style : PieChartStyle<T, U> = PieChartStyle(strokeColor: Color.red, fillColor: Color.clear) as! PieChartStyle<T, U>
     
     public var body: some View {
-        GeometryReader { geometry in
-            Arc(segments: self.segments, geometry: geometry)
+        ZStack {
+            Circle()
+                .fill(self.style.fillColor)
+            GeometryReader { geometry in
+                Arc(segments: self.segments, geometry: geometry, style: self.style)
+            }
         }
+        
     }
     
 }
 
 struct PieChart_Previews: PreviewProvider {
+    @State static var style = PieChartStyle<Color, Color>()
+    
     static var previews: some View {
-        PieChart(segments: [20, 50, 40])
+        PieChart(segments: [20, 50, 40], style: style)
             .frame(width: 400)
             
     }

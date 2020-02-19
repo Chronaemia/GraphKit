@@ -8,12 +8,11 @@
 
 
 import SwiftUI
-import UIKit
 
 public struct Line<T : ShapeStyle, U : ShapeStyle>: View {
     @State var points : [Double]
     @State var geometry : GeometryProxy?
-    var style : LineStyle<T, U>
+    var style : LineGraphStyle<T, U>
     
     var path : CGMutablePath {
         let path = CGMutablePath()
@@ -86,7 +85,8 @@ public struct Line<T : ShapeStyle, U : ShapeStyle>: View {
 
 
 struct Line_Previews: PreviewProvider {
+    @State static var style = LineGraphStyle<Color, Color>()
     static var previews: some View {
-        Line(points: [10, 9, 0, 6], style: LineStyle(stroke: Color.red, fill: Color.clear))
+        Line(points: [10, 9, 0, 6], style: style)
     }
 }

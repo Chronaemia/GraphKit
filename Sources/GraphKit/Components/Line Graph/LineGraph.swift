@@ -11,7 +11,7 @@ import SwiftUI
 public struct LineGraph<T : ShapeStyle, U: ShapeStyle>: View {
     var points : [Double]
     var axisLabels : GraphAxis = GraphAxis()
-    var style : LineStyle<T, U> = LineStyle(strokeColor: Color.red, fillColor: Color.clear) as! LineStyle<T, U>
+    var style : LineGraphStyle<T, U> = LineGraphStyle(strokeColor: Color.red, fillColor: Color.clear) as! LineGraphStyle<T, U>
     
 
     
@@ -40,17 +40,13 @@ public struct LineGraph<T : ShapeStyle, U: ShapeStyle>: View {
 
 struct LineGraph_Previews: PreviewProvider {
     @State static var points = [10.0, 1.0, 6.0, 9.5, 5.0, 10.0]
+    @State static var style = LineGraphStyle<Color, Color>()
     static var previews: some View {
         
         ZStack {
             //Color.black
             
-            LineGraph(points: points, axisLabels: GraphAxis(upperX: "Max") , style: LineStyle(
-                strokeColor: Color.clear,
-                fillColor: LinearGradient(gradient: Gradient(colors: [.blue, .green]), startPoint: .bottom, endPoint: .top),
-                lineWidth: 1,
-                curve: .continuous
-            ))
+            LineGraph(points: points, axisLabels: GraphAxis(upperX: "Max") , style: style)
             .frame(height: 200)
         }
     }
