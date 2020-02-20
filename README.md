@@ -34,9 +34,9 @@ A simple line graph can be created using `LineGraph(data : [Double])` or optiona
 #### Bubble Chart / Scatter Plot
 ![Bubble Chart / Scatter Plot](./_readme/assets/Bubble_Chart.png)
 
-A simple bubble / scatter chart can be created using `BubbleGraph(data)` or optionally with a `BubbleGraphStyle` struct that contains settings for stroke widths, fill colors / gradients, and a few other options. More on this later.
+A simple bubble / scatter chart can be created using `BubbleGraph(data: [CGPoint])` or optionally with a `BubbleGraphStyle` struct that contains settings for stroke widths, fill colors / gradients, and a few other options. More on this later.
 ****
 #### Gantt Chart
 ![Gantt Chart](./_readme/assets/Gantt.png)
 
-A simple gantt chart can be created using `GanttChart(data)` or optionally with a `GanttChartStyle` struct that contains settings for stroke widths, fill colors / gradients, and a few other options. More on this later.
+A simple gantt chart can be created using `GanttChart(data : [DateInterval])` or optionally with a `GanttChartStyle` struct that contains settings for stroke widths, fill colors / gradients, and a few other options. More on this later.
