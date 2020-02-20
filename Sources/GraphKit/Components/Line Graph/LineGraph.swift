@@ -38,16 +38,17 @@ public struct LineGraph<T : ShapeStyle, U: ShapeStyle>: View {
     }
 }
 
+public extension LineGraph where T == Color, U == Color {
+    init(data: [Double], axisLabels: GraphAxis) {
+        self.init(points: data, axisLabels: axisLabels, style: LineGraphStyle())
+    }
+}
+
 struct LineGraph_Previews: PreviewProvider {
     @State static var points = [10.0, 1.0, 6.0, 9.5, 5.0, 10.0]
-    @State static var style = LineGraphStyle<Color, Color>()
     static var previews: some View {
         
-        ZStack {
-            //Color.black
-            
-            LineGraph(points: points, axisLabels: GraphAxis(upperX: "Max") , style: style)
+        LineGraph(data: points, axisLabels: GraphAxis(upperX: "Max"))
             .frame(height: 200)
-        }
     }
 }

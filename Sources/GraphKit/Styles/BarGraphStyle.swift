@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-public struct BarStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
+public struct BarGraphStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     
     typealias StrokeStyle = T
     typealias FillStyle = U
