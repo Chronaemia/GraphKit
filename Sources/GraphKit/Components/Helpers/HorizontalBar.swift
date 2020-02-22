@@ -20,6 +20,7 @@ struct HorizontalBar<T : ShapeStyle, U: ShapeStyle>: View {
             Rectangle()
                 .fill(style.fillColor)
                 .frame(width: width)
+                .cornerRadius(style.radius)
             Spacer(minLength: 0)
         }
     }

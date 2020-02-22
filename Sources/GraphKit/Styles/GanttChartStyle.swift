@@ -27,7 +27,7 @@ public struct GanttChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     public var lineCap : CGLineCap = .butt
     public var lineJoin : CGLineJoin = .round
     public var miterLimit : CGFloat = .greatestFiniteMagnitude
-    public var radius : CGFloat = 20
+    public var radius : CGFloat = 10
     public var appearance: Appearance = .auto
     public var grid : GridStyle = .horizontal
 }
