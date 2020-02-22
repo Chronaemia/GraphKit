@@ -34,7 +34,7 @@ struct Arc<T : ShapeStyle, U: ShapeStyle>: View {
                 radius: self.minDim,
                 style: self.style
             )
-                .rotationEffect(self.calculateAngle(index), anchor: .center)
+            .rotationEffect(self.calculateAngle(index), anchor: .center)
              
         }
         

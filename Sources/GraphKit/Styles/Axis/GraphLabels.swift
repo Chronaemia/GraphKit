@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct GraphAxis {
+public struct GraphLabels {
     var lowerX : String = ""
     var lowerY : String = ""
     var upperX : String = ""

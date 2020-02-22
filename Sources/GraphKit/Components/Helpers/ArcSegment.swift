@@ -16,12 +16,14 @@ struct ArcSegment<T : ShapeStyle, U : ShapeStyle>: View {
     
     var body: some View {
         Path(self.arc)
-            .stroke(Color.white, style: .init(
+            .stroke(style.strokeColor, style: .init(
                 lineWidth: self.style.strokeWidth,
                 lineCap: .round,
                 lineJoin: .round,
                 miterLimit: .pi
             ))
+         
+            
             
         
          

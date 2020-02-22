@@ -9,13 +9,19 @@
 import Foundation
 import SwiftUI
 
-struct PieChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
+public struct PieChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     
     typealias StrokeStyle = T
     typealias FillStyle = U
     
-    public var strokeColor : T = Color.clear as! T
-    public var fillColor : U = Color.red as! U
+    public var strokeColor : T = Color.white as! T
+    public var fillColor : U = LinearGradient(
+        gradient: Gradient(colors: [
+            Color(red: 255/255, green: 127/255, blue: 80/255),
+            Color(red: 255/255, green: 99/255, blue: 72/255)
+        ]),
+        startPoint: .top,
+        endPoint: .bottom) as! U
     public var strokeWidth : CGFloat = 5.0
     
     var appearance: Appearance = .light

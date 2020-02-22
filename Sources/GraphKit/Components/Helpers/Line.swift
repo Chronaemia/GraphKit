@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-public struct Line<T : ShapeStyle, U : ShapeStyle>: View {
+struct Line<T : ShapeStyle, U : ShapeStyle>: View {
     @State var points : [Double]
     @State var geometry : GeometryProxy?
     var style : LineGraphStyle<T, U>

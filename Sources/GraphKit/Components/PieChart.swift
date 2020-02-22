@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View {
     @State var data : [Double]
-    @State var style : PieChartStyle<T, U>
+    var style : PieChartStyle<T, U>
     
     public var body: some View {
         ZStack {
@@ -20,14 +20,6 @@ public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View {
                 Arc(segments: self.data, geometry: geometry, style: self.style)
             }
         }
-        
-    }
-    
-}
-
-public extension PieChart where T == Color, U == Color {
-    init(data: [Double]) {
-        self.init(data: data, style: PieChartStyle())
     }
 }
 
@@ -36,6 +28,7 @@ struct PieChart_Previews: PreviewProvider {
     static var previews: some View {
         PieChart(data: [20, 50, 40])
             .padding(20)
+            .background(Color.black)
             .frame(width: 400)
             
             

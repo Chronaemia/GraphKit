@@ -15,8 +15,16 @@ public struct BarGraphStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     typealias FillStyle = U
     
     public var strokeColor : T = Color.white as! T
-    public var fillColor : U = Color.red as! U
+    public var fillColor : U = LinearGradient(
+            gradient: Gradient(colors: [
+                Color(red: 255/255, green: 127/255, blue: 80/255),
+                Color(red: 255/255, green: 99/255, blue: 72/255)
+            ]),
+            startPoint: .top,
+            endPoint: .bottom
+        ) as! U
     public var spacing : Double = 5
     public var appearance : Appearance = .light
     public var strokeWidth: CGFloat = 4
+    public var grid : GridStyle = .horizontal
 }

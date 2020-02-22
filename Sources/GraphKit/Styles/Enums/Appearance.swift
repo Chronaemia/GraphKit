@@ -11,4 +11,5 @@ import Foundation
 public enum Appearance {
     case light
     case dark
+    case auto
 }
