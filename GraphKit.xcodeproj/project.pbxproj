@@ -27,6 +27,8 @@
 		874E54192400B4D100D68E01 /* BubbleChartExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874E54182400B4D100D68E01 /* BubbleChartExtensions.swift */; };
 		874E541B2400B4DA00D68E01 /* BarGraphExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874E541A2400B4DA00D68E01 /* BarGraphExtensions.swift */; };
 		874E541D2400B4E300D68E01 /* LineGraphExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874E541C2400B4E300D68E01 /* LineGraphExtensions.swift */; };
+		875503FB24019A4E00A3A200 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875503FA24019A4E00A3A200 /* Point.swift */; };
+		875503FD2401EAE900A3A200 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875503FC2401EAE900A3A200 /* Theme.swift */; };
 		8757A8D723FCB66F000E1E95 /* BarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8757A8D623FCB66F000E1E95 /* BarGraph.swift */; };
 		8757A8D923FCB8CD000E1E95 /* VerticalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8757A8D823FCB8CD000E1E95 /* VerticalBar.swift */; };
 		8757A8DD23FE6444000E1E95 /* BubbleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8757A8DC23FE6444000E1E95 /* BubbleChart.swift */; };
@@ -46,7 +48,7 @@
 		OBJ_57 /* LineGraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* LineGraphStyle.swift */; };
 		OBJ_58 /* PieChartStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* PieChartStyle.swift */; };
 		OBJ_59 /* GraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* GraphStyle.swift */; };
-		OBJ_60 /* ScatterPlotStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* ScatterPlotStyle.swift */; };
+		OBJ_60 /* BubbleChartStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* BubbleChartStyle.swift */; };
 		OBJ_67 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_78 /* GraphKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* GraphKitTests.swift */; };
 		OBJ_79 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* XCTestManifests.swift */; };
@@ -77,6 +79,8 @@
 		874E54182400B4D100D68E01 /* BubbleChartExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChartExtensions.swift; sourceTree = "<group>"; };
 		874E541A2400B4DA00D68E01 /* BarGraphExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphExtensions.swift; sourceTree = "<group>"; };
 		874E541C2400B4E300D68E01 /* LineGraphExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphExtensions.swift; sourceTree = "<group>"; };
+		875503FA24019A4E00A3A200 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		875503FC2401EAE900A3A200 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8757A8D623FCB66F000E1E95 /* BarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraph.swift; sourceTree = "<group>"; };
 		8757A8D823FCB8CD000E1E95 /* VerticalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBar.swift; sourceTree = "<group>"; };
 		8757A8DC23FE6444000E1E95 /* BubbleChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChart.swift; sourceTree = "<group>"; };
@@ -98,7 +102,7 @@
 		OBJ_27 /* LineGraphStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphStyle.swift; sourceTree = "<group>"; };
 		OBJ_28 /* PieChartStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartStyle.swift; sourceTree = "<group>"; };
 		OBJ_30 /* GraphStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphStyle.swift; sourceTree = "<group>"; };
-		OBJ_31 /* ScatterPlotStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterPlotStyle.swift; sourceTree = "<group>"; };
+		OBJ_31 /* BubbleChartStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleChartStyle.swift; sourceTree = "<group>"; };
 		OBJ_34 /* GraphKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphKitTests.swift; sourceTree = "<group>"; };
 		OBJ_35 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_39 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				OBJ_14 /* Arc.swift */,
 				OBJ_15 /* ArcSegment.swift */,
 				OBJ_11 /* Line.swift */,
+				875503FA24019A4E00A3A200 /* Point.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -160,7 +165,8 @@
 				OBJ_27 /* LineGraphStyle.swift */,
 				OBJ_28 /* PieChartStyle.swift */,
 				OBJ_22 /* BarGraphStyle.swift */,
-				OBJ_31 /* ScatterPlotStyle.swift */,
+				OBJ_31 /* BubbleChartStyle.swift */,
+				875503FC2401EAE900A3A200 /* Theme.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 				874E541B2400B4DA00D68E01 /* BarGraphExtensions.swift in Sources */,
 				8757A8DD23FE6444000E1E95 /* BubbleChart.swift in Sources */,
 				874E54122400996100D68E01 /* HorizontalBar.swift in Sources */,
+				875503FD2401EAE900A3A200 /* Theme.swift in Sources */,
 				OBJ_52 /* GraphLabels.swift in Sources */,
 				874E54172400B4A000D68E01 /* GanttChartExtensions.swift in Sources */,
 				OBJ_53 /* BarGraphStyle.swift in Sources */,
@@ -369,9 +376,10 @@
 				874E541D2400B4E300D68E01 /* LineGraphExtensions.swift in Sources */,
 				OBJ_57 /* LineGraphStyle.swift in Sources */,
 				OBJ_58 /* PieChartStyle.swift in Sources */,
+				875503FB24019A4E00A3A200 /* Point.swift in Sources */,
 				8757A8D923FCB8CD000E1E95 /* VerticalBar.swift in Sources */,
 				OBJ_59 /* GraphStyle.swift in Sources */,
-				OBJ_60 /* ScatterPlotStyle.swift in Sources */,
+				OBJ_60 /* BubbleChartStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

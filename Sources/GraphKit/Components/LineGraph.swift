@@ -61,7 +61,7 @@ struct LineGraph_Previews: PreviewProvider {
     @State static var s = LineGraphStyle<Color, LinearGradient>(
         strokeWidth: 1,
         curve: .continuous,
-        appearance: .dark,
+        appearance: .auto,
         grid: .horizontal
     )
     

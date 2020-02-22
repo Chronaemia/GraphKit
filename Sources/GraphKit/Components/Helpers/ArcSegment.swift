@@ -16,17 +16,16 @@ struct ArcSegment<T : ShapeStyle, U : ShapeStyle>: View {
     
     var body: some View {
         Path(self.arc)
-            .stroke(style.strokeColor, style: .init(
-                lineWidth: self.style.strokeWidth,
-                lineCap: .round,
-                lineJoin: .round,
-                miterLimit: .pi
-            ))
-         
-            
-            
-        
-         
+            .fill(self.style.fillColor)
+            .overlay(
+                Path(self.arc)
+                .stroke(style.strokeColor, style: .init(
+                    lineWidth: self.style.strokeWidth,
+                    lineCap: .round,
+                    lineJoin: .round,
+                    miterLimit: .pi
+                ))
+            )
     }
     
     var arc : CGMutablePath {
@@ -44,10 +43,11 @@ struct ArcSegment<T : ShapeStyle, U : ShapeStyle>: View {
         path.closeSubpath()
         return path
     }
+    
 }
 
 struct ArcSegment_Previews: PreviewProvider {
-    @State static var style = PieChartStyle<Color, Color>()
+    @State static var style = PieChartStyle<Color, LinearGradient>()
     
     static var previews: some View {
         ArcSegment(

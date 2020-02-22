@@ -10,20 +10,23 @@ import SwiftUI
 
 struct Arc<T : ShapeStyle, U: ShapeStyle>: View {
     @State var segments : [Double]
-    @State var geometry : GeometryProxy?
+    @State var size : CGSize
     @State var style : PieChartStyle<T, U>
     
-    public var center : CGPoint {
-        CGPoint(x: geometry!.size.width / 2, y: geometry!.size.height / 2)
+    var total : Double
+    var center : CGPoint
+    var minDim : CGFloat
+    
+    init(segments : [Double], size: CGSize, style : PieChartStyle<T, U>) {
+        _segments = State(initialValue: segments)
+        _size = State(initialValue: size)
+        _style = State(initialValue: style)
+        
+        self.total = segments.reduce(0, +)
+        self.center = CGPoint(x: size.width / 2, y: size.height / 2)
+        self.minDim = min(size.width / 2 , size.height / 2)
     }
     
-    public var total : Double {
-        segments.reduce(0, +)
-    }
-    
-    public var minDim : CGFloat {
-        min(geometry!.size.width / 2 , geometry!.size.height / 2)
-    }
     
     var body: some View {
         ForEach(0..<self.segments.count, id: \.self){ index in
@@ -34,13 +37,12 @@ struct Arc<T : ShapeStyle, U: ShapeStyle>: View {
                 radius: self.minDim,
                 style: self.style
             )
-            .rotationEffect(self.calculateAngle(index), anchor: .center)
+                .rotationEffect(self.calculateAngle(index), anchor: .center)
              
         }
         
     }
     
-    // @TODO - Rethink this, it's really computational for no reason when it might be possible to just store this as a variable and add to it (except for SwiftUIs immutability
     private func calculateAngle(_ index : Int) -> Angle {
         return Angle(degrees: 360 * self.segments.prefix(index).reduce(0, +) / self.total)
     }
@@ -48,9 +50,10 @@ struct Arc<T : ShapeStyle, U: ShapeStyle>: View {
 }
 
 struct Arc_Previews: PreviewProvider {
-    @State static var style = PieChartStyle<Color, Color>()
+    @State static var style = PieChartStyle<Color, LinearGradient>()
+    @State static var size = CGSize(width: 400, height: 400)
     
     static var previews: some View {
-        Arc(segments: [1, 2, 3], style: style)
+        Arc(segments: [2, 5, 4], size: size, style: style)
     }
 }

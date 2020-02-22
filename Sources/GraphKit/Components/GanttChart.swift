@@ -8,13 +8,13 @@
 import SwiftUI
 
 public struct GanttChart<T : ShapeStyle, U: ShapeStyle>: View {
-    var data : [DateInterval]
+    @State var data : [DateInterval]
     var style : GanttChartStyle<T, U> = GanttChartStyle()
     var start : Date
     var end : Date
     
     init(data: [DateInterval], style: GanttChartStyle<T, U>) {
-        self.data = data
+        _data = State(initialValue: data)
         self.style = style
         self.start = data.min { $0.start < $1.start }!.start
         self.end = data.max { $0.end < $1.end }!.end

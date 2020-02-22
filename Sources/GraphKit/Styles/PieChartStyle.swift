@@ -22,7 +22,8 @@ public struct PieChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
         ]),
         startPoint: .top,
         endPoint: .bottom) as! U
-    public var strokeWidth : CGFloat = 5.0
+    public var strokeWidth : CGFloat = 1.0
     
     var appearance: Appearance = .light
+    public var grid : GridStyle = .disabled
 }

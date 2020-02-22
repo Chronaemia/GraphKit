@@ -14,10 +14,12 @@ public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View {
     
     public var body: some View {
         ZStack {
-            Circle()
-                .fill(self.style.fillColor)
+            Grid(count: 10)
+            .appearance(style.appearance)
+            .gridType(style.grid)
+            
             GeometryReader { geometry in
-                Arc(segments: self.data, geometry: geometry, style: self.style)
+                Arc(segments: self.data, size: geometry.size, style: self.style)
             }
         }
     }
@@ -26,10 +28,10 @@ public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View {
 struct PieChart_Previews: PreviewProvider {
     
     static var previews: some View {
-        PieChart(data: [20, 50, 40])
+        PieChart(data: [20, 50, 40, 50, 30])
             .padding(20)
             .background(Color.black)
-            .frame(width: 400)
+            .frame(height: 250)
             
             
     }
