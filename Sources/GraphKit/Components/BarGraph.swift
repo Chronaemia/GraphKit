@@ -14,8 +14,9 @@ public struct BarGraph<T : ShapeStyle, U: ShapeStyle>: View {
     public var body: some View {
         ZStack {
             Grid(count: 10)
-            .appearance(style.appearance)
             .gridType(style.grid)
+            .appearance(style.appearance)
+            
             
             GeometryReader { geometry in
                 HStack {

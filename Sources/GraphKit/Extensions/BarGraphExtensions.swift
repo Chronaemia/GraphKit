@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // MARK: - Allows library users to modify the look of the Chart/Graph with a GraphStyle Object
 public extension BarGraph {

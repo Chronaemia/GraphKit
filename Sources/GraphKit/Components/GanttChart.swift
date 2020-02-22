@@ -21,22 +21,29 @@ public struct GanttChart<T : ShapeStyle, U: ShapeStyle>: View {
     }
     
     public var body: some View {
-        VStack{
-            ForEach(data, id: \.self) { interval in
-                HStack {
-                    GeometryReader { geometry in
-                        HorizontalBar(
-                            width: geometry.size.width * self.getWidth(interval: interval),
-                            offset: geometry.size.width * self.getOffset(interval: interval),
-                            style: self.style
-                        )
+        ZStack {
+            Grid(count: 10)
+            .appearance(style.appearance)
+            .gridType(style.grid)
+            
+            VStack {
+                ForEach(data, id: \.self) { interval in
+                    HStack {
+                        GeometryReader { geometry in
+                            HorizontalBar(
+                                width: geometry.size.width * self.getWidth(interval: interval),
+                                offset: geometry.size.width * self.getOffset(interval: interval),
+                                style: self.style
+                            )
+                        }
+                        
+                        
                     }
-                    
-                    
+                    .padding(.bottom, 20)
                 }
-                .padding(.bottom, 20)
             }
         }
+        
     }
 }
 

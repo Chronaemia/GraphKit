@@ -26,5 +26,5 @@ public struct BarGraphStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     public var spacing : Double = 5
     public var appearance : Appearance = .light
     public var strokeWidth: CGFloat = 4
-    public var grid : GridStyle = .horizontal
+    public var grid : GridStyle = .vertical
 }

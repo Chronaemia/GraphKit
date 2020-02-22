@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 // MARK: - Allows library users to modify the look of the Chart/Graph with a GraphStyle Object
 public extension GanttChart {
-    func graphStyle(style : PieChartStyle<T, U>) -> Self {
+    func graphStyle(style : GanttChartStyle<T, U>) -> Self {
         var body = self
         body.style = style
         return body

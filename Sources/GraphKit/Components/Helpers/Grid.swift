@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Grid: View {
-    @State var type : GridStyle = .full
+    var type : GridStyle = .full
     var count : Int = 6
     var appearance : Appearance = .auto
     
@@ -50,7 +50,7 @@ struct Grid: View {
 
 extension Grid {
     func gridType(_ style: GridStyle) -> Self {
-        let body = self
+        var body = self
         body.type = style
         return body
     }

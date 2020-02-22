@@ -29,5 +29,5 @@ public struct GanttChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     public var miterLimit : CGFloat = .greatestFiniteMagnitude
     public var radius : CGFloat = 20
     public var appearance: Appearance = .auto
-    public var grid : GridStyle = .disabled
+    public var grid : GridStyle = .horizontal
 }
