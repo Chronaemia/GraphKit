@@ -12,15 +12,18 @@ struct ArcSegment<T : ShapeStyle, U : ShapeStyle>: View {
     @State var angle : CGFloat // The total angle taken up by the slice
     @State var center : CGPoint
     @State var radius : CGFloat
-    @State var style : PieChartStyle<T, U>
+    @State var fill : T
+    @State var stroke : U
+    @State var strokeWidth : CGFloat
     
     var body: some View {
         Path(self.arc)
-            .fill(self.style.fillColor)
+            .fill(fill)
+            
             .overlay(
                 Path(self.arc)
-                .stroke(style.strokeColor, style: .init(
-                    lineWidth: self.style.strokeWidth,
+                .stroke(stroke, style: .init(
+                    lineWidth: strokeWidth,
                     lineCap: .round,
                     lineJoin: .round,
                     miterLimit: .pi
@@ -54,7 +57,9 @@ struct ArcSegment_Previews: PreviewProvider {
             angle: 0.3,
             center: CGPoint(x: 1, y: 1),
             radius: 1,
-            style: style
+            fill: Color.red,
+            stroke: Color.white,
+            strokeWidth: 5
         )
     }
 }

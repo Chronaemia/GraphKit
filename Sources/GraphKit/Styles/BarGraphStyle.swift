@@ -14,17 +14,10 @@ public struct BarGraphStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     typealias StrokeStyle = T
     typealias FillStyle = U
     
-    public var strokeColor : T = Color.white as! T
-    public var fillColor : U = LinearGradient(
-            gradient: Gradient(colors: [
-                Color(red: 255/255, green: 127/255, blue: 80/255),
-                Color(red: 255/255, green: 99/255, blue: 72/255)
-            ]),
-            startPoint: .top,
-            endPoint: .bottom
-        ) as! U
-    public var spacing : Double = 5
-    public var appearance : Appearance = .light
+    public var theme : Theme<T, U> = Theme()
     public var strokeWidth: CGFloat = 4
+    public var spacing : Double = 5
+    public var radius : CGFloat = 0
+    public var appearance : Appearance = .light
     public var grid : GridStyle = .vertical
 }

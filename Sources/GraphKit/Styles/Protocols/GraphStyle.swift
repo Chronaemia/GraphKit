@@ -13,8 +13,6 @@ protocol GraphStyle {
     associatedtype StrokeStyle
     associatedtype FillStyle
     
-    var strokeColor : StrokeStyle { get set }
-    var fillColor : FillStyle { get set }
     var strokeWidth : CGFloat { get set }
     var appearance : Appearance { get set }
 }

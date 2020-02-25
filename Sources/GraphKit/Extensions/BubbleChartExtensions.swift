@@ -18,7 +18,7 @@ public extension BubbleChart {
     }
 }
 // MARK: - Provides default typing so the user never has to explicity disambiguate my generics
-public extension BubbleChart where T == Color, U == LinearGradient {
+public extension BubbleChart where T == LinearGradient, U == Color {
     init(data: [Point]) {
         self.init(data: data, style: BubbleChartStyle())
     }

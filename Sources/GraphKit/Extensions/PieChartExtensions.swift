@@ -18,7 +18,7 @@ public extension PieChart {
 }
 
 // MARK: - Provides default typing so the user never has to explicity disambiguate my generics
-public extension PieChart where T == Color, U == LinearGradient {
+public extension PieChart where T == LinearGradient, U == Color {
     init(data: [Double]) {
         self.init(data: data, style: PieChartStyle())
     }

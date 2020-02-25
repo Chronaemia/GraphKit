@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct HorizontalBar<T : ShapeStyle, U: ShapeStyle>: View {
+struct HorizontalBar<T : ShapeStyle >: View {
     @State var width : CGFloat
     @State var offset : CGFloat
-    var style : GanttChartStyle<T, U>
+    @State var fill : T
+    @State var radius : CGFloat
     
     var body: some View {
         HStack{
@@ -18,9 +19,9 @@ struct HorizontalBar<T : ShapeStyle, U: ShapeStyle>: View {
                 .frame(width: offset)
             
             Rectangle()
-                .fill(style.fillColor)
+                .fill(fill)
                 .frame(width: width)
-                .cornerRadius(style.radius)
+                .cornerRadius(radius)
             Spacer(minLength: 0)
         }
     }
@@ -28,8 +29,7 @@ struct HorizontalBar<T : ShapeStyle, U: ShapeStyle>: View {
 }
 
 struct HorizontalBar_Previews: PreviewProvider {
-    @State static var style = GanttChartStyle<Color, Color>()
     static var previews: some View {
-        HorizontalBar(width: 100, offset: 20, style: style)
+        HorizontalBar(width: 100, offset: 20, fill: Color.orange, radius: 10)
     }
 }

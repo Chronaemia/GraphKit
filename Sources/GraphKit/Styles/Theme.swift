@@ -37,10 +37,11 @@ public struct Theme <S : ShapeStyle, T : ShapeStyle> {
             startPoint: .top,
             endPoint: .bottom
         ),
+        // Green Gradient
         LinearGradient(
             gradient: Gradient(colors: [
-                Color(red: 255/255, green: 127/255, blue: 80/255),
-                Color(red: 255/255, green: 99/255, blue: 72/255)
+                Color(red: 46/255, green: 213/255, blue: 115/255),
+                Color(red: 40/255, green: 237/255, blue: 178/255)
             ]),
             startPoint: .top,
             endPoint: .bottom

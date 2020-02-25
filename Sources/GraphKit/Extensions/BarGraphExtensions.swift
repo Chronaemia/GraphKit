@@ -17,7 +17,7 @@ public extension BarGraph {
     }
 }
 
-public extension BarGraph where T == Color, U == LinearGradient {
+public extension BarGraph where T == LinearGradient, U == Color {
     init(data: [Double]) {
         self.init(data: data, style: BarGraphStyle())
     }

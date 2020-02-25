@@ -11,7 +11,7 @@ import SwiftUI
 struct Arc<T : ShapeStyle, U: ShapeStyle>: View {
     @State var segments : [Double]
     @State var size : CGSize
-    @State var style : PieChartStyle<T, U>
+    @State var style : PieChartStyle<T, U> = PieChartStyle()
     
     var total : Double
     var center : CGPoint
@@ -35,7 +35,9 @@ struct Arc<T : ShapeStyle, U: ShapeStyle>: View {
                 angle: CGFloat(self.segments[index] / self.total),
                 center: self.center,
                 radius: self.minDim,
-                style: self.style
+                fill: self.getColor(index),
+                stroke: self.style.theme.strokeColor,
+                strokeWidth: self.style.strokeWidth
             )
                 .rotationEffect(self.calculateAngle(index), anchor: .center)
              
@@ -47,10 +49,14 @@ struct Arc<T : ShapeStyle, U: ShapeStyle>: View {
         return Angle(degrees: 360 * self.segments.prefix(index).reduce(0, +) / self.total)
     }
     
+    private func getColor(_ index : Int) -> T {
+        return self.style.theme.fillColors[ index % self.style.theme.fillColors.count ]
+    }
+    
 }
 
 struct Arc_Previews: PreviewProvider {
-    @State static var style = PieChartStyle<Color, LinearGradient>()
+    @State static var style = PieChartStyle<LinearGradient, Color>()
     @State static var size = CGSize(width: 400, height: 400)
     
     static var previews: some View {
