@@ -15,14 +15,14 @@ public struct LineGraphStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     typealias FillStyle = U
     
     public var labels : GraphLabels = GraphLabels()
-    public var strokeColor : T = Color.clear as! T
-    public var fillColor : U = LinearGradient(
+    public var strokeColor : U = Color.clear as! U
+    public var fillColor : T = LinearGradient(
         gradient: Gradient(colors: [
             Color(red: 255/255, green: 127/255, blue: 80/255),
             Color(red: 255/255, green: 99/255, blue: 72/255)
         ]),
         startPoint: .top,
-        endPoint: .bottom) as! U
+        endPoint: .bottom) as! T
     public var strokeWidth : CGFloat = 2
     public var lineCap : CGLineCap = .butt
     public var lineJoin : CGLineJoin = .round
