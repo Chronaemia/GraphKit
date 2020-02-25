@@ -7,24 +7,25 @@
 
 import SwiftUI
 
-struct VerticalBar<T : ShapeStyle, U: ShapeStyle>: View {
+struct VerticalBar<T : ShapeStyle>: View {
     @State var height : CGFloat
-    var style : BarGraphStyle<T, U>
+    @State var fill : T
+    @State var radius : CGFloat
     
     public var body: some View {
         VStack {
             Spacer(minLength: 0.0)
                 
             Rectangle()
-                .fill(self.style.fillColor)
+                .fill(fill)
+                .cornerRadius(radius)
                 .frame(height: height)
         }
     }
 }
 
 struct VerticalBar_Previews: PreviewProvider {
-    @State static var style = BarGraphStyle<Color, Color>()
     static var previews: some View {
-        VerticalBar(height: 5, style: style)
+        VerticalBar(height: 400, fill: Color.red, radius: 0)
     }
 }

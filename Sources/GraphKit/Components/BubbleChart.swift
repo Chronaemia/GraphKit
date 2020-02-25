@@ -36,13 +36,13 @@ public struct BubbleChart<T : ShapeStyle, U: ShapeStyle>: View {
             
             
             GeometryReader { geometry in
-                ForEach(self.data, id: \.self) { point in
+                ForEach(0..<self.data.count, id: \.self) { index in
                     Circle()
-                        .fill(self.style.fillColor)
-                        .scaleEffect(self.calculateScale(point: point))
+                        .fill(self.getColor(index: index))
+                        .scaleEffect(self.calculateScale(point: self.data[index] ))
                         .position(
-                            x: geometry.size.width * (point.location.x / self.max.location.x),
-                            y: geometry.size.height - geometry.size.height * (point.location.y / self.max.location.y)
+                            x: geometry.size.width * (self.data[index].location.x / self.max.location.x),
+                            y: geometry.size.height - geometry.size.height * (self.data[index].location.y / self.max.location.y)
                         )
                      
                 }
@@ -53,6 +53,12 @@ public struct BubbleChart<T : ShapeStyle, U: ShapeStyle>: View {
     
     private func calculateScale(point: Point) -> CGFloat {
         return (point.weight / self.max.weight) / 3
+    }
+    
+    private func getColor(index: Int) -> T {
+        return style.theme.fillColors[
+            index % style.theme.fillColors.count
+        ]
     }
 }
 

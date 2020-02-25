@@ -17,20 +17,31 @@ public struct BarGraph<T : ShapeStyle, U: ShapeStyle>: View {
             .gridType(style.grid)
             .appearance(style.appearance)
             
-            
             GeometryReader { geometry in
                 HStack {
-                    ForEach(self.data, id: \.self){ item in
-                        VerticalBar(height: self.getSize(point: item, geometry: geometry), style: self.style)
+                    ForEach(0..<(self.data.count), id: \.self){ index in
+                        VerticalBar(
+                            height: self.getHeight(point: self.data[index], geometry: geometry),
+                            fill: self.getColor(index),
+                            radius: self.style.radius
+                        )
                     }
                 }
             }
+            
         }
         
         
     }
     
-    private func getSize(point: Double, geometry : GeometryProxy) -> CGFloat {
+    
+    private func getColor(_ index: Int) -> T {
+        return style.theme.fillColors[
+            index % style.theme.fillColors.count
+        ]
+    }
+     
+    private func getHeight(point: Double, geometry : GeometryProxy) -> CGFloat {
         return geometry.size.height * CGFloat(point / data.max()!)
     }
 }
@@ -41,8 +52,8 @@ struct BarGraph_Previews: PreviewProvider {
     
     static var previews: some View {
         BarGraph(data: points)
-            .padding(30)
+            .padding(20)
             .background(Color.black)
-            .frame(height: 300)
+            .frame(height: 250)
     }
 }

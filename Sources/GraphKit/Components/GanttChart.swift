@@ -33,7 +33,8 @@ public struct GanttChart<T : ShapeStyle, U: ShapeStyle>: View {
                             HorizontalBar(
                                 width: geometry.size.width * self.getWidth(interval: interval),
                                 offset: geometry.size.width * self.getOffset(interval: interval),
-                                style: self.style
+                                fill: self.getColor(index: self.data.firstIndex(of: interval)!),
+                                radius: self.style.radius
                             )
                         }
                         
@@ -55,6 +56,12 @@ extension GanttChart {
     
     private func getOffset(interval: DateInterval) -> CGFloat {
         return CGFloat(start.distance(to: interval.start) / self.start.distance(to: self.end))
+    }
+    
+    private func getColor(index: Int) -> T {
+        return style.theme.fillColors[
+            index % style.theme.fillColors.count
+        ]
     }
 }
 

@@ -17,7 +17,7 @@ public extension GanttChart {
     }
 }
 // MARK: - Provides default typing so the user never has to explicity disambiguate my generics
-public extension GanttChart where T == Color, U == LinearGradient {
+public extension GanttChart where T == LinearGradient, U == Color {
     init(data: [DateInterval]) {
         self.init(data: data, style: GanttChartStyle())
     }
