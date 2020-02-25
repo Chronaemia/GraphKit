@@ -67,8 +67,7 @@ struct LineGraph_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        LineGraph(data: points)
-            .graphStyle(style: s)
+        LineGraph(data: points, style: s)
             .padding(10)
             .background(Color.black)
             .frame(height: 250)
