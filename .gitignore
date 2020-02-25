@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 .DS_Store
 /.build
 /Packages
 /*.xcodeproj
 xcuserdata/
 .swiftpm
+=======
+**/.DS_Store
+*.xcodeproj
+*.xcodeproj/
+.swiftpm
+.build
+>>>>>>> master
