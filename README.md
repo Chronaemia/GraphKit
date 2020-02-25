@@ -19,6 +19,7 @@ The eventual goal here is to slowly over time offer similar functionality to D3.
 - Per-data-point labels
 - Bar and Line graph state animations and detail views
 
+
 ### Graph Types
 
 #### Bar Graphs
