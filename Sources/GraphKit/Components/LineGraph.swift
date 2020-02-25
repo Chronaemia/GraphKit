@@ -58,7 +58,7 @@ public struct LineGraph<T : ShapeStyle, U: ShapeStyle>: View, Graph {
 
 struct LineGraph_Previews: PreviewProvider {
     @State static var points = [10.0, 1.0, 6.0, 9.5, 5.0, 10.0]
-    @State static var s = LineGraphStyle<Color, LinearGradient>(
+    @State static var s = LineGraphStyle<LinearGradient, Color>(
         strokeWidth: 1,
         curve: .continuous,
         appearance: .auto,

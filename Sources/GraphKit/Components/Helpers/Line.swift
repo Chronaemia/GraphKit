@@ -12,7 +12,7 @@ import SwiftUI
 struct Line<T : ShapeStyle, U : ShapeStyle>: View {
     @State var points : [Double]
     @State var geometry : GeometryProxy?
-    var style : LineGraphStyle<T, U>
+    @State var style : LineGraphStyle<T, U>
     
     var path : CGMutablePath {
         let path = CGMutablePath()
@@ -54,10 +54,10 @@ struct Line<T : ShapeStyle, U : ShapeStyle>: View {
         
         ZStack {
             Path(self.closedPath)
-                .fill(self.style.fillColor)
+                .fill(self.style.theme.fillColors[0])
             
             Path(self.path)
-                .stroke(self.style.strokeColor, style: .init(
+                .stroke(self.style.theme.strokeColor, style: .init(
                     lineWidth: self.style.strokeWidth,
                     lineCap: self.style.lineCap,
                     lineJoin: self.style.lineJoin,

@@ -18,7 +18,7 @@ public extension LineGraph {
 }
 
 // MARK: - Provides default typing so the user never has to explicity disambiguate my generics
-public extension LineGraph where T == Color, U == Color {
+public extension LineGraph where T == LinearGradient, U == Color {
     init(data: [Double]) {
         self.init(data: data, style: LineGraphStyle())
     }
