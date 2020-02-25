@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		872FD6EF2404B633008B4EB8 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FD6EE2404B633008B4EB8 /* Graph.swift */; };
 		874E54122400996100D68E01 /* HorizontalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874E54112400996100D68E01 /* HorizontalBar.swift */; };
 		874E54152400B37700D68E01 /* PieChartExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874E54142400B37700D68E01 /* PieChartExtensions.swift */; };
 		874E54172400B4A000D68E01 /* GanttChartExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874E54162400B4A000D68E01 /* GanttChartExtensions.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		872FD6EE2404B633008B4EB8 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		874E54112400996100D68E01 /* HorizontalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBar.swift; sourceTree = "<group>"; };
 		874E54142400B37700D68E01 /* PieChartExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartExtensions.swift; sourceTree = "<group>"; };
 		874E54162400B4A000D68E01 /* GanttChartExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttChartExtensions.swift; sourceTree = "<group>"; };
@@ -160,7 +162,6 @@
 			children = (
 				OBJ_20 /* Axis */,
 				OBJ_23 /* Enums */,
-				OBJ_29 /* Protocols */,
 				OBJ_26 /* GanttChartStyle.swift */,
 				OBJ_27 /* LineGraphStyle.swift */,
 				OBJ_28 /* PieChartStyle.swift */,
@@ -193,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_30 /* GraphStyle.swift */,
+				872FD6EE2404B633008B4EB8 /* Graph.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -247,6 +249,7 @@
 		OBJ_8 /* GraphKit */ = {
 			isa = PBXGroup;
 			children = (
+				OBJ_29 /* Protocols */,
 				OBJ_9 /* Components */,
 				OBJ_17 /* Extensions */,
 				OBJ_19 /* Styles */,
@@ -354,6 +357,7 @@
 			files = (
 				8757A8D723FCB66F000E1E95 /* BarGraph.swift in Sources */,
 				OBJ_46 /* Line.swift in Sources */,
+				872FD6EF2404B633008B4EB8 /* Graph.swift in Sources */,
 				OBJ_47 /* LineGraph.swift in Sources */,
 				8757A8E123FE7B0A000E1E95 /* GridStyle.swift in Sources */,
 				OBJ_48 /* Arc.swift in Sources */,

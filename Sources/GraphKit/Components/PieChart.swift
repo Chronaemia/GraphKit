@@ -8,9 +8,10 @@
 
 import SwiftUI
 
-public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View {
-    @State var data : [Double]
-    var style : PieChartStyle<T, U>
+public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View, Graph {
+    
+    @State public var data : [Double]
+    @State public var style : PieChartStyle<T, U>
     
     public var body: some View {
         ZStack {

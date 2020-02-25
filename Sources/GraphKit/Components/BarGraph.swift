@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-public struct BarGraph<T : ShapeStyle, U: ShapeStyle>: View {
-    @State var data : [Double]
-    var style : BarGraphStyle<T, U>
+public struct BarGraph<T : ShapeStyle, U: ShapeStyle>: View, Graph {
+    @State public var data : [Double]
+    @State public var style : BarGraphStyle<T, U>
     
     public var body: some View {
         ZStack {

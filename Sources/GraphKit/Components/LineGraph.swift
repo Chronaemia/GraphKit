@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-public struct LineGraph<T : ShapeStyle, U: ShapeStyle>: View {
-    @State var data : [Double]
-    var style : LineGraphStyle<T, U> = LineGraphStyle()
+public struct LineGraph<T : ShapeStyle, U: ShapeStyle>: View, Graph {
+    @State public var data : [Double]
+    @State public var style : LineGraphStyle<T, U> = LineGraphStyle()
     
 
     

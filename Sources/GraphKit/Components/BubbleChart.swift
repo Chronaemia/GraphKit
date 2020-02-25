@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-public struct BubbleChart<T : ShapeStyle, U: ShapeStyle>: View {
-    @State var data : [Point]
-    var style : BubbleChartStyle<T, U>
+public struct BubbleChart<T : ShapeStyle, U: ShapeStyle>: View, Graph {
+    @State public var data : [Point]
+    @State public var style : BubbleChartStyle<T, U>
+    
     var min : Point
     var max : Point
     
     init(data: [Point], style : BubbleChartStyle<T, U>) {
         _data = State(initialValue: data)
-        self.style = style
+        _style = State(initialValue: style)
         
         let minX = data.min { $0.location.x < $1.location.x }!.location.x
         let minY = data.min { $0.location.y < $1.location.y }!.location.y
