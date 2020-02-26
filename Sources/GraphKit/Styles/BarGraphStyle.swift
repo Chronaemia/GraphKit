@@ -19,7 +19,8 @@ public struct BarGraphStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
         spacing: Double = 5,
         radius: CGFloat = 0,
         appearance: Appearance = .light,
-        grid: GridStyle = .vertical
+        grid: GridStyle = .vertical,
+        gridDensity: Int = 6
     ) {
         self.theme = theme
         self.strokeWidth = strokeWidth
@@ -27,6 +28,7 @@ public struct BarGraphStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
         self.radius = radius
         self.appearance = appearance
         self.grid = grid
+        self.gridDensity = gridDensity
     }
     
     public var theme : Theme<T, U>
@@ -35,4 +37,5 @@ public struct BarGraphStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     public var radius : CGFloat
     public var appearance : Appearance
     public var grid : GridStyle
+    public var gridDensity : Int
 }

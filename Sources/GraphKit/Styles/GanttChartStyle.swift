@@ -23,7 +23,8 @@ public struct GanttChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
         miterLimit: CGFloat = .greatestFiniteMagnitude,
         radius: CGFloat = 10,
         appearance: Appearance = .auto,
-        grid: GridStyle = .horizontal
+        grid: GridStyle = .horizontal,
+        gridDensity: Int = 6
     ) {
         self.labels = labels
         self.theme = theme
@@ -34,6 +35,7 @@ public struct GanttChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
         self.radius = radius
         self.appearance = appearance
         self.grid = grid
+        self.gridDensity = gridDensity
     }
     
     public var labels : GraphLabels
@@ -45,4 +47,5 @@ public struct GanttChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     public var radius : CGFloat
     public var appearance: Appearance
     public var grid : GridStyle
+    public var gridDensity : Int
 }

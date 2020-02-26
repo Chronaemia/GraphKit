@@ -23,7 +23,8 @@ public struct BubbleChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
         curve: Curviture = .none,
         curveRadius: CGFloat = 20,
         appearance: Appearance = .auto,
-        grid: GridStyle = .full
+        grid: GridStyle = .full,
+        gridDensity: Int = 6
     ) {
         self.labels = labels
         self.theme = theme
@@ -35,6 +36,7 @@ public struct BubbleChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
         self.curveRadius = curveRadius
         self.appearance = appearance
         self.grid = grid
+        self.gridDensity = gridDensity
     }
     
     public var labels : GraphLabels
@@ -47,5 +49,6 @@ public struct BubbleChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     public var curveRadius : CGFloat
     public var appearance: Appearance
     public var grid : GridStyle
+    public var gridDensity : Int
 }
 

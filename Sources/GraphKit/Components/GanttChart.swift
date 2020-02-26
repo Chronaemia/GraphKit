@@ -24,7 +24,7 @@ public struct GanttChart<T : ShapeStyle, U: ShapeStyle>: View, Graph {
     
     public var body: some View {
         ZStack {
-            Grid(count: 10)
+            Grid(count: style.gridDensity)
             .appearance(style.appearance)
             .gridType(style.grid)
             

@@ -15,12 +15,14 @@ public struct PieChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
         theme: Theme<T, U> = Theme(),
         strokeWidth: CGFloat = 1.5,
         appearance: Appearance = .light,
-        grid: GridStyle = .disabled
+        grid: GridStyle = .disabled,
+        gridDensity: Int = 6
     ) {
         self.theme = theme
         self.strokeWidth = strokeWidth
         self.appearance = appearance
         self.grid = grid
+        self.gridDensity = gridDensity
     }
     
     
@@ -31,4 +33,5 @@ public struct PieChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     public var strokeWidth : CGFloat
     public var appearance: Appearance
     public var grid : GridStyle
+    public var gridDensity : Int
 }
