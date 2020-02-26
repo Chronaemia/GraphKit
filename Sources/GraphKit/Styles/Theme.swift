@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 
 public struct Theme <S : ShapeStyle, T : ShapeStyle> {
-    public var fillColors : [S] = [
+    public init(
+        fillColors: [S] = [
         // Orange Gradient
         LinearGradient(
             gradient: Gradient(colors: [
@@ -46,7 +47,13 @@ public struct Theme <S : ShapeStyle, T : ShapeStyle> {
             startPoint: .top,
             endPoint: .bottom
         )
-    ] as! [S]
+        ] as! [S],
+        strokeColor: T = Color.white as! T
+    ) {
+        self.fillColors = fillColors
+        self.strokeColor = strokeColor
+    }
     
-    public var strokeColor : T = Color.white as! T
+    public var fillColors : [S]
+    public var strokeColor : T
 }

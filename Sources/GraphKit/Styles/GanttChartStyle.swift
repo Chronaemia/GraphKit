@@ -14,13 +14,35 @@ public struct GanttChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     typealias StrokeStyle = T
     typealias FillStyle = U
     
-    public var labels : GraphLabels = GraphLabels()
-    public var theme : Theme<T, U> = Theme()
-    public var strokeWidth : CGFloat = 2
-    public var lineCap : CGLineCap = .butt
-    public var lineJoin : CGLineJoin = .round
-    public var miterLimit : CGFloat = .greatestFiniteMagnitude
-    public var radius : CGFloat = 10
-    public var appearance: Appearance = .auto
-    public var grid : GridStyle = .horizontal
+    public init(
+        labels: GraphLabels = GraphLabels(),
+        theme: Theme<T, U> = Theme(),
+        strokeWidth: CGFloat = 2,
+        lineCap: CGLineCap = .butt,
+        lineJoin: CGLineJoin = .round,
+        miterLimit: CGFloat = .greatestFiniteMagnitude,
+        radius: CGFloat = 10,
+        appearance: Appearance = .auto,
+        grid: GridStyle = .horizontal
+    ) {
+        self.labels = labels
+        self.theme = theme
+        self.strokeWidth = strokeWidth
+        self.lineCap = lineCap
+        self.lineJoin = lineJoin
+        self.miterLimit = miterLimit
+        self.radius = radius
+        self.appearance = appearance
+        self.grid = grid
+    }
+    
+    public var labels : GraphLabels
+    public var theme : Theme<T, U>
+    public var strokeWidth : CGFloat
+    public var lineCap : CGLineCap
+    public var lineJoin : CGLineJoin
+    public var miterLimit : CGFloat
+    public var radius : CGFloat
+    public var appearance: Appearance
+    public var grid : GridStyle
 }

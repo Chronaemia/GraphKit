@@ -11,12 +11,24 @@ import SwiftUI
 
 public struct PieChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
     
+    public init(
+        theme: Theme<T, U> = Theme(),
+        strokeWidth: CGFloat = 1.5,
+        appearance: Appearance = .light,
+        grid: GridStyle = .disabled
+    ) {
+        self.theme = theme
+        self.strokeWidth = strokeWidth
+        self.appearance = appearance
+        self.grid = grid
+    }
+    
+    
     typealias StrokeStyle = T
     typealias FillStyle = U
     
-    public var theme : Theme<T, U> = Theme()
-    public var strokeWidth : CGFloat = 1.5
-    
-    var appearance: Appearance = .light
-    public var grid : GridStyle = .disabled
+    public var theme : Theme<T, U>
+    public var strokeWidth : CGFloat
+    public var appearance: Appearance
+    public var grid : GridStyle
 }

@@ -10,14 +10,29 @@ import Foundation
 import SwiftUI
 
 public struct BarGraphStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
-    
     typealias StrokeStyle = T
     typealias FillStyle = U
     
-    public var theme : Theme<T, U> = Theme()
-    public var strokeWidth: CGFloat = 4
-    public var spacing : Double = 5
-    public var radius : CGFloat = 0
-    public var appearance : Appearance = .light
-    public var grid : GridStyle = .vertical
+    public init(
+        theme: Theme<T, U> = Theme(),
+        strokeWidth: CGFloat = 4,
+        spacing: Double = 5,
+        radius: CGFloat = 0,
+        appearance: Appearance = .light,
+        grid: GridStyle = .vertical
+    ) {
+        self.theme = theme
+        self.strokeWidth = strokeWidth
+        self.spacing = spacing
+        self.radius = radius
+        self.appearance = appearance
+        self.grid = grid
+    }
+    
+    public var theme : Theme<T, U>
+    public var strokeWidth: CGFloat
+    public var spacing : Double
+    public var radius : CGFloat
+    public var appearance : Appearance
+    public var grid : GridStyle
 }

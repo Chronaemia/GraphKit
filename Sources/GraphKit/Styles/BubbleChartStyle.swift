@@ -10,19 +10,42 @@ import Foundation
 import SwiftUI
 
 public struct BubbleChartStyle<T : ShapeStyle, U : ShapeStyle> : GraphStyle {
-    
     typealias StrokeStyle = T
     typealias FillStyle = U
     
-    public var labels : GraphLabels = GraphLabels()
-    public var theme : Theme<T, U> = Theme()
-    public var strokeWidth : CGFloat = 2
-    public var lineCap : CGLineCap = .butt
-    public var lineJoin : CGLineJoin = .round
-    public var miterLimit : CGFloat = .greatestFiniteMagnitude
-    public var curve : Curviture = .none
-    public var curveRadius : CGFloat = 20
-    public var appearance: Appearance = .auto
-    public var grid : GridStyle = .full
+    internal init(
+        labels: GraphLabels = GraphLabels(),
+        theme: Theme<T, U> = Theme(),
+        strokeWidth: CGFloat = 2,
+        lineCap: CGLineCap = .butt,
+        lineJoin: CGLineJoin = .round,
+        miterLimit: CGFloat = .greatestFiniteMagnitude,
+        curve: Curviture = .none,
+        curveRadius: CGFloat = 20,
+        appearance: Appearance = .auto,
+        grid: GridStyle = .full
+    ) {
+        self.labels = labels
+        self.theme = theme
+        self.strokeWidth = strokeWidth
+        self.lineCap = lineCap
+        self.lineJoin = lineJoin
+        self.miterLimit = miterLimit
+        self.curve = curve
+        self.curveRadius = curveRadius
+        self.appearance = appearance
+        self.grid = grid
+    }
+    
+    public var labels : GraphLabels
+    public var theme : Theme<T, U>
+    public var strokeWidth : CGFloat
+    public var lineCap : CGLineCap
+    public var lineJoin : CGLineJoin
+    public var miterLimit : CGFloat
+    public var curve : Curviture
+    public var curveRadius : CGFloat
+    public var appearance: Appearance
+    public var grid : GridStyle
 }
 

@@ -9,8 +9,21 @@
 import Foundation
 
 public struct GraphLabels {
-    var lowerX : String = ""
-    var lowerY : String = ""
-    var upperX : String = ""
-    var upperY : String = ""
+    
+    public init(
+        lowerX: String = "",
+        lowerY: String = "",
+        upperX: String = "",
+        upperY: String = ""
+    ) {
+        self.lowerX = lowerX
+        self.lowerY = lowerY
+        self.upperX = upperX
+        self.upperY = upperY
+    }
+    
+    var lowerX : String
+    var lowerY : String
+    var upperX : String
+    var upperY : String
 }
