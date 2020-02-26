@@ -13,6 +13,11 @@ public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View, Graph {
     @State public var data : [Double]
     @State public var style : PieChartStyle<T, U>
     
+    public init(data: [Double], style: PieChartStyle<T, U>) {
+        _data = State(initialValue: data)
+        _style = State(initialValue: style)
+    }
+    
     public var body: some View {
         ZStack {
             Grid(count: 10)

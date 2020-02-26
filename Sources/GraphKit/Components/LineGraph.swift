@@ -10,9 +10,12 @@ import SwiftUI
 
 public struct LineGraph<T : ShapeStyle, U: ShapeStyle>: View, Graph {
     @State public var data : [Double]
-    @State public var style : LineGraphStyle<T, U> = LineGraphStyle()
+    @State public var style : LineGraphStyle<T, U>
     
-
+    public init(data: [Double], style: LineGraphStyle<T, U>) {
+        _data = State(initialValue: data)
+        _style = State(initialValue: style)
+    }
     
     public var body: some View {
         ZStack{
