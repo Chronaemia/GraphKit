@@ -50,10 +50,8 @@ public struct LineGraph<T : ShapeStyle, U: ShapeStyle>: View, Graph {
                 }
             }
         }
-        .padding(20)
-        
-        
     }
+    
 }
 
 struct LineGraph_Previews: PreviewProvider {
