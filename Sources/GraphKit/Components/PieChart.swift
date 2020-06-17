@@ -8,15 +8,28 @@
 
 import SwiftUI
 
-public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View, Graph {
+public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View {
+    @State private var pie : Pie<T, U>
+    @State private var style : PieChartStyle<T, U>
     
-    @State public var data : [Double]
-    @State public var style : PieChartStyle<T, U>
-    
-    public init(data: [Double], style: PieChartStyle<T, U>) {
-        _data = State(initialValue: data)
+    init(data: [Double], style: PieChartStyle<T, U>) {
         _style = State(initialValue: style)
+        _pie = State(initialValue: Pie(
+            data: data,
+            style: style
+        ))
     }
+    
+    /*
+    convenience init(data: [String : Double], style: PieChartStyle<T, U>) {
+        _style = State(initialValue: style)
+        _pie = State(initialValue: Pie(
+            data: data,
+            style: style
+        ))
+    }
+     */
+    
     
     public var body: some View {
         ZStack {
@@ -25,10 +38,21 @@ public struct PieChart<T : ShapeStyle, U: ShapeStyle> : View, Graph {
             .gridType(style.grid)
             
             GeometryReader { geometry in
-                Arc(segments: self.data, size: geometry.size, style: self.style)
+                ZStack {
+                    ForEach(self.pie.arcIDs, id: \.self) { arcID in
+                        ArcShape<T, U>(self.pie.arcs[arcID]!)
+                    }
+
+                    // Stop the window shrinking to zero when wedgeIDs.isEmpty.
+                    Spacer()
+                }
+                .flipsForRightToLeftLayoutDirection(true)
+                .padding()
+                .drawingGroup()
             }
         }
     }
+    
 }
 
 struct PieChart_Previews: PreviewProvider {
