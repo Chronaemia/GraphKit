@@ -26,9 +26,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "GraphKit",
-            dependencies: []),
+            dependencies: [],
+            path: "GraphKit"),
         .testTarget(
             name: "GraphKitTests",
-            dependencies: ["GraphKit"]),
+            dependencies: ["GraphKit"],
+            path: "GraphKitTests"),
     ]
 )
